@@ -1,0 +1,44 @@
+<div ng-controller= "logController">
+  <h1>Hi  <span style="color:orangered"> {{cookies.name}} </span>, Welcome to Discussion board</h1>
+  <hr>
+  <form>
+      <input type="submit"value="logout" ng-click = "logout()">
+    </form>
+    <a href="#!/newpoll">Create a new Poll</a>
+    <div ng-controller = "pollController">
+      Search Questions: <input type="text" ng-model="filter_question">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Survey Question</th>
+            <th>date Posted</th>
+            <th>Action</th>
+          </tr>
+          <tbody>
+            <tr ng-repeat = "x in polls | filter: {question:filter_question}">
+              <td>{{x.user.name}}</td>
+              <td><a href="#!/poll/{{x._id}}">{{x.question}}</a></td>
+              <td>{{x.createdAt | date:'medium'}}</td>
+              <td><button ng-show="cookies.id==x.user.id" ng-click = "deletePoll(x._id)">Delete</button></td>
+            </tr>
+          </tbody>
+        </thead>
+      </table>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,29 @@
+<div ng-controller = "logController">
+
+  <div ng-controller = "showpollController">
+
+<h2>{{poll.question}}</h2>
+<p>Click the vote button to choose one</p>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Current count of votes</th>
+      <th> Action</th>
+    </tr>
+    <tbody>
+      <tr ng-repeat = "x in poll.options">
+        <td>{{x.option}}</td>
+        <td>{{x.vote}}</td>
+        <td><form>
+          <input type="submit" value="Vote" ng-click = "vote(cookies.id,x._id,x.user.id) ">
+        </form></td>
+
+      </tr>
+    </tbody>
+  </thead>
+</table>
+<a href="#!/loggedin">Go to Polls</a>
+  </div>
+
+</div>

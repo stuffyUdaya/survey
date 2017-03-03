@@ -1,0 +1,22 @@
+<div ng-controller= "logController">
+
+<div ng-controller= "pollController">
+<h5>Put the question and options here</h5>
+{{quesmsg}}
+{{optmsg}}
+<br>
+<br>
+
+  <form >
+      <p>question: <textarea  rows="4" cols="80" ng-model = "newpoll.question" required></textarea></p>
+      <p>option1: <input type="text" ng-model = "newpoll.option1" required></p>
+      <p>option2: <input type="text" ng-model = "newpoll.option2" required></p>
+      <p>option3: <input type="text" ng-model = "newpoll.option3" required></p>
+      <p>option4: <input type="text" ng-model = "newpoll.option4" required></p>
+      <input type="submit" ng-click = "savePoll(cookies)">
+  </form>
+
+  <a href="#!/loggedin">Cancel</a>
+
+</div>
+</div>
